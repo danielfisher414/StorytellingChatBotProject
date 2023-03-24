@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ChatBot</title>
+</head>
+<body>
+    <h1>ChatBot</h1>
+    <div id="chatbox"></div>
+    <input type="text" id="usermsg" name="usermsg" placeholder="Type your message...">
+    <button type="submit" id="sendmsg">Send</button>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#sendmsg").click(function() {
+                var usermsg = $("#usermsg").val();
+                $.get("/get", {msg: usermsg}).done(function(data) {
+                    var botmsg = $("<p></p>").text("Bot: " + data);
+                    $("#chatbox").append(botmsg);
+                    $("#usermsg").val("");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
