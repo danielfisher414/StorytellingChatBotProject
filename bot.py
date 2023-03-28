@@ -3,7 +3,8 @@ from chatterbot.trainers import ListTrainer
 from chatterbot.logic import BestMatch
 from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request,jsonify
+from flask_cors import CORS,cross_origin
 
 app = Flask(__name__)
 
@@ -43,15 +44,19 @@ trainer.train(data)
 # print("Hello")
 
 # flash application
-@app.route('/')
-def home():
-    return render_template('index.html')
+# @app.route('/')
+# def home():
+#     return render_template('index.html')
+
+app = Flask(__name__)
+cors = CORS(app)
 
 @app.route('/get')
+@cross_origin()
 def get_bot_response():
     user_input = request.args.get('msg')
     bot_response = str(chatbot.get_response(user_input))
-    return bot_response
+    return jsonify({'response':bot_response})
 
 if __name__ == '__main__':
     app.run(debug=True)
