@@ -47,7 +47,7 @@
                 $.get("/get", { msg: usermsg }).done(function (data) { //get request, uses message 'usermsg' as query parameter
                     //and calls the bot to get the chatbot output data
                     var botmsg = $("<p></p>").text("Bot: " + data); //creates new paragraph with chatbot output data
-                    var usermsgtext = $("<p><p></p></p>").text(usermsg); //creates new paragraph with chatbot output data
+                    var usermsgtext = $("<p></p>").text(usermsg); //creates new paragraph with chatbot output data
                     $("#userbox").append(usermsgtext); //appends new chat message with the var, and prints to screen
                     $("#chatbox").append(botmsg); //appends new chat message with the var, and prints to screen
                     $("#usermsg").val(""); //removes the input text
