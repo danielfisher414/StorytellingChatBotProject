@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { Image } from 'react-native-web';
 
 
 export default function App() {
@@ -23,6 +24,12 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <div id='imgBox'>
+      {/* <img
+      src='https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71UmqXwHWfL._AC_SL1024_.jpg'
+    /> */}
+      </div>
+
       <TextInput
         style={styles.input}
         onChangeText={text => setUserInput(text)}

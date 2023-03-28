@@ -56,6 +56,9 @@ cors = CORS(app)
 def get_bot_response():
     user_input = request.args.get('msg')
     bot_response = str(chatbot.get_response(user_input))
+    # print(bot_response)
+    if (str(bot_response).startswith("- ")):
+      bot_response = str(bot_response)[2:]
     return jsonify({'response':bot_response})
 
 if __name__ == '__main__':
