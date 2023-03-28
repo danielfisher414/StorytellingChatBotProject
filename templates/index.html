@@ -1,25 +1,61 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>ChatBot</title>
 </head>
+<style>
+    img {
+        align-content: center;
+      border-radius: 8px;
+      object-fit: cover;
+      display: block; /* Ensures the image is centered horizontally */
+  margin: 0 auto; /* Centers the image horizontally */
+  width: 450px;
+    }
+    #mapbox {
+            /* width: 500px; */
+            /* height: 200px;  */
+            display: flex;
+            
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 <body>
+    <div style="position: relative;justify-content: center;text-align: center;align-items: center;">
     <h1>ChatBot</h1>
-    <div id="chatbox"></div>
+             <div id="mapbox">
+            <img src="https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71UmqXwHWfL._AC_SL1024_.jpg"  style="max-width: 100%; height: auto;">
+        </div> 
+    <div id="chatContainer" style="display: flex; justify-content: space-between;width: 60%;
+                                    border-color: black;border-style: solid;
+                                    margin: auto;">
+        <div id="chatbox">
+
+        </div>
+        <div id="userbox">
+        </div>
+    </div>
     <input type="text" id="usermsg" name="usermsg" placeholder="Type your message...">
     <button type="submit" id="sendmsg">Send</button>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
-            $("#sendmsg").click(function() {
-                var usermsg = $("#usermsg").val();
-                $.get("/get", {msg: usermsg}).done(function(data) {
-                    var botmsg = $("<p></p>").text("Bot: " + data);
-                    $("#chatbox").append(botmsg);
-                    $("#usermsg").val("");
+        $(document).ready(function () { //waits until HTML Document has fully loaded
+            $("#sendmsg").click(function () { //Once the submit button is clicked it goes to the function
+                var usermsg = $("#usermsg").val(); //gets user message as a vars
+                $.get("/get", { msg: usermsg }).done(function (data) { //get request, uses message 'usermsg' as query parameter
+                    //and calls the bot to get the chatbot output data
+                    var botmsg = $("<p></p>").text("Bot: " + data); //creates new paragraph with chatbot output data
+                    var usermsgtext = $("<p><p></p></p>").text(usermsg); //creates new paragraph with chatbot output data
+                    $("#userbox").append(usermsgtext); //appends new chat message with the var, and prints to screen
+                    $("#chatbox").append(botmsg); //appends new chat message with the var, and prints to screen
+                    $("#usermsg").val(""); //removes the input text
                 });
             });
         });
     </script>
+    </div>
 </body>
+
 </html>
