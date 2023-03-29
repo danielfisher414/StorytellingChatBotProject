@@ -5,6 +5,7 @@ from chatterbot.trainers import ChatterBotCorpusTrainer
 from chatterbot.conversation import Statement
 from flask import Flask, render_template, request,jsonify
 from flask_cors import CORS,cross_origin
+import os
 
 app = Flask(__name__)
 
@@ -27,15 +28,35 @@ trainerCorpus = ChatterBotCorpusTrainer(chatbot)
 
 trainerCorpus.train(
     "chatterbot.corpus.english.greetings",
-    "chatterbot.corpus.english.conversations"
+    "chatterbot.corpus.english.conversations",
+    
 )
 
-# Train using your data.yml file
-with open('data.yml', 'r') as file:
-    data = file.read().splitlines()
+# # Train using your data.yml file
+# with open('mirkwoodLocation.yml', 'r') as file:
+#     data = file.read().splitlines()
 
-# # Train using my own data
-trainer.train(data)
+# # # Train using my own data
+# trainer.train(data)
+
+# Train using multiple data files
+# Specify the directory path
+dir_path = './trainingData/Locations'
+
+# Get a list of all files in the directory
+files = [f for f in os.listdir(dir_path) if os.path.isfile(os.path.join(dir_path, f))]
+
+# Train using all the files in the directory
+for file_name in files:
+    with open(os.path.join(dir_path, file_name), 'r') as file:
+        data = file.read().splitlines()
+    trainer.train(data)
+    
+    
+# trainer.train(training_data)
+
+
+
 # conversations = data['conversations']
 # trainer.train(conversations)
 # for conversation in data['conversations']:
