@@ -108,6 +108,7 @@ export default function App() {
     <View />
   )}
   <View style={styles.imgBox}>
+  
     {/* <img
       src='https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71UmqXwHWfL._AC_SL1024_.jpg'
     /> */}
