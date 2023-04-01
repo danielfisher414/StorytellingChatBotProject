@@ -9,7 +9,7 @@ import os
 
 app = Flask(__name__)
 
-chatbot = ChatBot('hobbit bot',
+chatbot = ChatBot('new bot',
     logic_adapters=[
         {
             'import_path': 'chatterbot.logic.BestMatch',
@@ -27,7 +27,7 @@ trainerCorpus = ChatterBotCorpusTrainer(chatbot)
 
 
 trainerCorpus.train(
-    "chatterbot.corpus.english.greetings",
+    # "chatterbot.corpus.english.greetings",
     "chatterbot.corpus.english.conversations",
     
 )
@@ -52,7 +52,31 @@ for file_name in files:
         data = file.read().splitlines()
     trainer.train(data)
     
-    
+training_data = [
+    {
+        "tag": "greeting",
+        "patterns": ["Hi", "How are you", "Is anyone there?", "Hello", "Good day"],
+        "responses": ["Hello, thanks for visiting", "Good to see you again", "Hi there, how can I help?"]
+    },
+    {
+        "tag": "goodbye",
+        "patterns": ["Bye", "See you later", "Goodbye"],
+        "responses": ["Goodbye", "Have a nice day", "See you soon"]
+    },
+        {
+        "tag": "sad",
+        "patterns": ["I'm not feeling well", "I'm quite ill and sad", "I feel sad today,","I'm not feeling very good","I dont feel very good"],
+        "responses": ["You should be stronger", "I hope you feel better soon", "Hopefully tomorrow you will feel better"]
+    }
+]
+for data in training_data:
+    patterns = data["patterns"]
+    responses = data["responses"]
+    tag = data["tag"]
+    for pattern in patterns:
+        trainer.train([pattern, tag])
+    for response in responses:
+        trainer.train([response, tag])
 # trainer.train(training_data)
 
 
@@ -69,38 +93,38 @@ for file_name in files:
 # def home():
 #     return render_template('index.html')
 
-app = Flask(__name__)
-cors = CORS(app)
+# app = Flask(__name__)
+# cors = CORS(app)
 
-@app.route('/get')
-@cross_origin()
-def get_bot_response():
-    user_input = request.args.get('msg')
-    bot_response = str(chatbot.get_response(user_input))
-    # print(bot_response)
-    if (str(bot_response).startswith("- ")):
-      bot_response = str(bot_response)[2:]
-    return jsonify({'response':bot_response})
+# @app.route('/get')
+# @cross_origin()
+# def get_bot_response():
+#     user_input = request.args.get('msg')
+#     bot_response = str(chatbot.get_response(user_input))
+#     # print(bot_response)
+#     if (str(bot_response).startswith("- ")):
+#       bot_response = str(bot_response)[2:]
+#     return jsonify({'response':bot_response})
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
 
 # end flash application
-# while True:
-#     try:
-#         user_input = input()
-#         bot_response = chatbot.get_response(user_input)
-#         # if bot_response.text.startswith()
-#         if (str(bot_response).startswith("- ")):
-#             bot_response = str(bot_response)[2:]
-#         print("Hobbiton: ",bot_response)
+while True:
+    try:
+        user_input = input()
+        bot_response = chatbot.get_response(user_input)
+        # if bot_response.text.startswith()
+        if (str(bot_response).startswith("- ")):
+            bot_response = str(bot_response)[2:]
+        print("Hobbiton: ",bot_response)
         
-#         feedback=input('was that helpful?')
-#         if(feedback.lower() in ['no','n','nope']):
-#             statement = Statement(text=bot_response)
-#             statement.in_response_to = user_input
-#             chatbot.learn_response(statement, statement)
-#             print("Thank you for teaching me.")
+        feedback=input('was that helpful?')
+        if(feedback.lower() in ['no','n','nope']):
+            statement = Statement(text=bot_response)
+            statement.in_response_to = user_input
+            chatbot.learn_response(statement, statement)
+            print("Thank you for teaching me.")
 
-#     except KeyboardInterrupt:
-#         break
+    except KeyboardInterrupt:
+        break
