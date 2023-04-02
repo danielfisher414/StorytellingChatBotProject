@@ -1,13 +1,23 @@
 {
   "intents": [
     {
+      "tag": "Mirkwood Detail",
+      "patterns": [
+        "What is Mirkwood?",
+        "Can you tell me about Mirkwood?",
+        "Detail me about Mirkwood?",
+        "What is in Mirkwood"
+      ],
+      "responses": [
+        "It's a dense and heavy woodland. Full of danger."
+      ]
+    },
+    {
       "tag": "Mirkwood location",
       "patterns": [
         "Where is Mirkwood located?",
         "What is the location of Mirkwood?",
-        "What parts is Mirkwood in?",
-        "What's up",
-        "Howdy"
+        "What parts is Mirkwood in?"
       ],
       "responses": [
         "It's in the eastern portion of Rhovanion or Wilderland. It's existed since the earliest days."

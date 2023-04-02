@@ -49,21 +49,21 @@
         ]
       },
       {
-        "tag": "food",
+        "tag": "help",
         "patterns": [
-          "What's your menu like?",
-          "Can you recommend something to eat?",
-          "What do you have to eat?",
-          "Do you serve vegetarian food?",
-          "Can I see your menu?",
-          "What's on the menu?"
+          "Can you help?",
+          "What should I type?",
+          "Can you give suggestions on what to type?",
+          "How can you assist me?",
+          "I'm not sure what to ask, can you suggest something?",
+          "I need some guidance on how to use this chatbot.",
+          "What are some things I can ask you?",
+          "What is the purpose of this chatbot?"
         ],
         "responses": [
-          "We have a wide range of dishes, including meat, vegetarian, and vegan options. Would you like me to recommend something specific?",
-          "Our menu includes a variety of options to suit different dietary requirements. What type of food do you usually enjoy?",
-          "We offer a range of cuisines, including Asian, European, and American. What type of food are you in the mood for?",
-          "Yes, we have a number of vegetarian and vegan options available. Would you like me to recommend something in particular?",
-          "Of course! Here is our menu. What looks good to you?"
+          "I can help with telling the story based on the book 'The Hobbit' ",
+          "I can help with detailing the location we are in, or any detail related to a character you want to learn. I'll do my best to provide you with good answers to your questions!",
+          "I can tell you about details relating to characters and locations within the book 'The Hobbit' story. What are you interested in learning about?"
         ]
       }
     ]

@@ -19,6 +19,7 @@ import { Video } from 'expo-av';
 
 export default function App() {
 
+  
   // const { width, height } = Dimensions.get('window');
 
   // const styles = StyleSheet.create({
@@ -32,12 +33,16 @@ export default function App() {
   const [botResponse, setBotResponse] = useState('');
   const [messages, setMessages] = useState([]);
   const [status, setStatus] = useState([]);
-  
+  const [location, setLocation] = useState('');
   // const [video, setVideo] = useState(null);
-
+  const messagesListRef = useRef(null);
   const video = useRef(null);
 
-
+  useEffect(() => {
+    if (messagesListRef.current) {
+      messagesListRef.current.scrollToEnd({animated: true});
+    }
+  }, [messages]);
 
   // useEffect(() => {
   //   async function loadVideo() {
@@ -57,9 +62,17 @@ export default function App() {
   //   loadVideo();
   // }, []);
 
+  function handleScrollToEnd(width, height) {
+    if (messagesListRef.current) {
+      messagesListRef.current.scrollToOffset({offset: height});
+    }
+  }
+
   const handlePress = () => {
+    
     fetch(`http://127.0.0.1:5000/get?msg=${userInput}`, { mode: 'cors' })
     .then(response => {
+      
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -69,8 +82,13 @@ export default function App() {
     })
     .then(data => {setBotResponse(data.response)
       setMessages([...messages, { message: userInput, sentBy: 'user' },{ message: data.response, sentBy: 'bot' }]);
+      // if(userInput.toLowerCase().includes('mirkwood')){
+      //   // console.log("contains Mirkwood");
+      // }
+      messagesListRef.current.scrollToEnd();  
       
     })
+    
     .catch(error => console.error(error));
 
   };
@@ -94,6 +112,7 @@ export default function App() {
   {messages.length > 1 ? (
     <View style={styles.messagesBox}>
       <FlatList
+      ref={messagesListRef}
         data={messages}
         renderItem={({ item }) => (
           console.log(messages),
@@ -102,6 +121,7 @@ export default function App() {
           </View>
         )}
         keyExtractor={(item, index) => index.toString()}
+        onContentSizeChange={handleScrollToEnd} 
       />
     </View>
   ) : (
@@ -112,7 +132,7 @@ export default function App() {
     {/* <img
       src='https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71UmqXwHWfL._AC_SL1024_.jpg'
     /> */}
-    {/* check */}
+    {/* check1 */}
   </View>
   <View style={{ display: 'flex', flexDirection: 'row' }}>
     <View style={{ flex: 1 }}>
@@ -187,13 +207,14 @@ const styles = StyleSheet.create({
     borderColor: 'black',
     borderStyle: 'solid',
     width: '80%',
-    height:150,
+    height:340,
     padding: 10,
     marginBottom: 10,
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
   userMessage: {
+    flex: 1,
     backgroundColor: '#4fc3f7',
     padding: 10,
     borderRadius: 10,
@@ -202,6 +223,7 @@ const styles = StyleSheet.create({
     maxWidth: '70%',
   },
   botMessage: {
+    flex: 1,
     backgroundColor: '#7c76ed',
     padding: 10,
     borderRadius: 10,
@@ -210,6 +232,7 @@ const styles = StyleSheet.create({
     maxWidth: '70%',
   },
   messageText: {
+    flex: 1,
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
