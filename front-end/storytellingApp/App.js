@@ -112,6 +112,7 @@ export default function App() {
     {/* <img
       src='https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/71UmqXwHWfL._AC_SL1024_.jpg'
     /> */}
+    {/* check */}
   </View>
   <View style={{ display: 'flex', flexDirection: 'row' }}>
     <View style={{ flex: 1 }}>

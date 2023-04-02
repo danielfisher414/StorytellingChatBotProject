@@ -1,0 +1,71 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": [
+          "Hello",
+          "Hi",
+          "Hey",
+          "What's up",
+          "Howdy"
+        ],
+        "responses": [
+          "Hello! How can I help you today?",
+          "Hi there! What can I do for you?",
+          "Hey! How can I assist you?",
+          "What's up! How may I assist you?"
+        ]
+      },
+      {
+        "tag": "goodbye",
+        "patterns": [
+          "Bye",
+          "See you later",
+          "Goodbye",
+          "See ya",
+          "Later"
+        ],
+        "responses": [
+          "Goodbye! Have a great day.",
+          "See you later! Have a good one.",
+          "Take care and have a good day.",
+          "Bye! Have a great one."
+        ]
+      },
+      {
+        "tag": "thanks",
+        "patterns": [
+          "Thanks",
+          "Thank you",
+          "Appreciate it",
+          "Thanks a lot",
+          "Thank you so much"
+        ],
+        "responses": [
+          "You're welcome! Is there anything else I can help you with?",
+          "No problem! What else can I assist you with?",
+          "Anytime! What can I do for you?",
+          "Glad to help! What else can I assist you with?"
+        ]
+      },
+      {
+        "tag": "food",
+        "patterns": [
+          "What's your menu like?",
+          "Can you recommend something to eat?",
+          "What do you have to eat?",
+          "Do you serve vegetarian food?",
+          "Can I see your menu?",
+          "What's on the menu?"
+        ],
+        "responses": [
+          "We have a wide range of dishes, including meat, vegetarian, and vegan options. Would you like me to recommend something specific?",
+          "Our menu includes a variety of options to suit different dietary requirements. What type of food do you usually enjoy?",
+          "We offer a range of cuisines, including Asian, European, and American. What type of food are you in the mood for?",
+          "Yes, we have a number of vegetarian and vegan options available. Would you like me to recommend something in particular?",
+          "Of course! Here is our menu. What looks good to you?"
+        ]
+      }
+    ]
+  }
+  

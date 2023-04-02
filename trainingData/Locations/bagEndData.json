@@ -1,0 +1,57 @@
+{
+    "intents": [
+      {
+        "tag": "Bag End location",
+        "patterns": [
+          "Where is Bag End Located?.",
+          "What location is Bag End in?",
+          "Where is Bag End?"
+        ],
+        "responses": [
+            "At the end of Bagshot Row in Hobbiton.",
+            "Right at the end of Bagshot Row in Hobbiton."
+        ]
+      },
+      {
+        "tag": "Bag End Home",
+        "patterns": [
+          "Where do you live ?",
+          "Where is your residence?"
+        ],
+        "responses": [
+          "My home is in Bag End in Hobbiton.."
+        ]
+      },
+      {
+        "tag": "Bag End Description",
+        "patterns": [
+          "Describe your house?",
+          "What does your home look like?"
+        ],
+        "responses": [
+          "It is an expansive Hobbit-hole with many windows; a  large circular green front and back door, and a large number of rooms with a pantries room."
+        ]
+      },
+      {
+        "tag": "Favourite Room in Bag End",
+        "patterns": [
+          "Which is your favourite room in your house?",
+          "Which room do you like the most in your house?",
+          "In your house which room do you like the most?"
+        ],
+        "responses": [
+          "The pantries room!"
+        ]
+      },
+      {
+        "tag": "Bag End Dangerous",
+        "patterns": [
+          "Is your home dangerous?",
+          "Is Bag End dangerous?"
+        ],
+        "responses": [
+          "Defiantly not!"
+        ]
+      }
+    ]
+  }
