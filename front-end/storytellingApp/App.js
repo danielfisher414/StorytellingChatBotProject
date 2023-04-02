@@ -1,5 +1,5 @@
 import React, { useState,Component,useEffect,useRef } from 'react';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View, FlatList,Dimensions,ViewStyle     } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, FlatList,Dimensions,ViewStyle,Image} from 'react-native';
 // import {Video} from 'expo-av';
 // import { requireNativeComponent } from 'react-native';
 // import { Platform } from 'react-native';
@@ -29,6 +29,10 @@ export default function App() {
     }
   }
 
+  useEffect(()=>{
+    console.log(location)
+  })
+
   const handlePress = () => {
     
     fetch(`http://127.0.0.1:5000/get?msg=${userInput}`, { mode: 'cors' })
@@ -44,7 +48,13 @@ export default function App() {
     .then(data => {setBotResponse(data.response)
       setMessages([...messages, { message: userInput, sentBy: 'user' },{ message: data.response, sentBy: 'bot' }]);
       if(userInput.toLowerCase().includes('mirkwood')){
-        console.log("contains Mirkwood");
+        // console.log("contains Mirkwood");
+        setLocation('Mirkwood');
+        // console.log(location);
+      }else if(userInput.toLowerCase().includes('bag end')){
+        // console.log("contains Mirkwood");
+        setLocation('bag end');
+        // console.log(location);
       }
   
       
@@ -56,17 +66,29 @@ export default function App() {
 
   return (
 <View style={styles.container}>
+    {location != 'Mirkwood' ?(
+            <Video
+            ref={video}
+            style={styles.video}
+            resizeMode="cover"
+            source={require("./assets/videos/bilbo_House.mp4")}
+            isLooping
+            shouldPlay
+            styleProp
+            
+          />
+    ):            
+<Image style={{position:'absolute',   
+    overflow: 'hidden', /* Hide vertical scrollbar */
+    width: '100%',
+    height: '100%',
+}}
+resizeMode="cover"
+  source={require('./assets/pictures/HobbitMirkwood.jpg')}
+  onError={(e) => console.log(e)}
+/>
+    }
 
-      <Video
-        ref={video}
-        style={styles.video}
-        resizeMode="cover"
-        source={require("./assets/videos/bilbo_House.mp4")}
-        isLooping
-        shouldPlay
-        styleProp
-        
-      />
     
   {messages.length > 1 ? (
     <View style={styles.messagesBox}>
@@ -110,7 +132,7 @@ export default function App() {
       </TouchableOpacity>
     </View>
   </View>
-  <Text style={styles.response}>{botResponse}</Text>
+  {/* <Text style={styles.response}>{botResponse}</Text> */}
 </View>
 
   );

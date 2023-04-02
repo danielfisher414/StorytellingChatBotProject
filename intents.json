@@ -49,6 +49,22 @@
         ]
       },
       {
+        "tag": "Self Description",
+        "patterns": [
+          "Thanks",
+          "Thank you",
+          "Appreciate it",
+          "Thanks a lot",
+          "Thank you so much"
+        ],
+        "responses": [
+          "You're welcome! Is there anything else I can help you with?",
+          "No problem! What else can I assist you with?",
+          "Anytime! What can I do for you?",
+          "Glad to help! What else can I assist you with?"
+        ]
+      },
+      {
         "tag": "help",
         "patterns": [
           "Can you help?",

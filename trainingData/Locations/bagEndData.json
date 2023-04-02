@@ -15,18 +15,24 @@
       {
         "tag": "Bag End Home",
         "patterns": [
-          "Where do you live ?",
+          "Where do you live?",
+          "Where is your home?",
+          "Which location do you live?",
           "Where is your residence?"
         ],
         "responses": [
-          "My home is in Bag End in Hobbiton.."
+          "My home is in Bag End in Hobbiton."
         ]
       },
       {
         "tag": "Bag End Description",
         "patterns": [
-          "Describe your house?",
-          "What does your home look like?"
+          "Describe your house",
+          "Describe your home",
+          "Describe your hobbit house",
+          "Describe your hobbit home",
+          "What does your home look like?",
+          "What is inside your house?"
         ],
         "responses": [
           "It is an expansive Hobbit-hole with many windows; a  large circular green front and back door, and a large number of rooms with a pantries room."

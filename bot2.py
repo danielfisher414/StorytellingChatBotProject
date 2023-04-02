@@ -55,6 +55,7 @@ classifier = nltk.NaiveBayesClassifier.train(training_data)
 
 
 def generate_response(input_text, threshold=0.5):
+    
     # Tokenize and stem the input text
     tokens = nltk.word_tokenize(input_text)
     stemmed_tokens = [stemmer.stem(w.lower()) for w in tokens if w != '?']
@@ -66,6 +67,7 @@ def generate_response(input_text, threshold=0.5):
     prob_dist = classifier.prob_classify(input_featureset)
     output_label = prob_dist.max()
     confidence_score = prob_dist.prob(output_label)
+
 
     # Check if the input is in the dataset based on the confidence score
     print(confidence_score)
