@@ -6,28 +6,13 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View, FlatList,Dimension
 // import video from './assets/videos/9878-background-full-screen.mp4'
 // import { createElement } from 'react-native-web';
 // import { Image } from 'react-native-web';
-// import Video from 'react-native-web';
+// import Videofrom 'react-native-web';
 import { Video } from 'expo-av';
 
-// const videoStyle: ViewStyle = {
-//   width: 200,
-//   height: 200,
-//   alignSelf: 'center',
-//   marginTop: 20,
-//   borderRadius: 10,
-// };
+
 
 export default function App() {
 
-  
-  // const { width, height } = Dimensions.get('window');
-
-  // const styles = StyleSheet.create({
-  //   backgroundVideo: {
-  //     width: width * 0.8,
-  //     height: height * 0.5,
-  //   },
-  // });
 
   const [userInput, setUserInput] = useState('');
   const [botResponse, setBotResponse] = useState('');
@@ -37,30 +22,6 @@ export default function App() {
   // const [video, setVideo] = useState(null);
   const messagesListRef = useRef(null);
   const video = useRef(null);
-
-  useEffect(() => {
-    if (messagesListRef.current) {
-      messagesListRef.current.scrollToEnd({animated: true});
-    }
-  }, [messages]);
-
-  // useEffect(() => {
-  //   async function loadVideo() {
-  //     const { status } = await Video.requestPermissionsAsync();
-  //     if (status !== 'granted') return;
-  
-  //     const videoObject = new Video.Player();
-  //     videoObject.setOnPlaybackStatusUpdate((playbackStatus) => {
-  //       if (playbackStatus.didJustFinish) {
-  //         videoObject.replayAsync();
-  //       }
-  //     });
-  //     await videoObject.loadAsync(require('./assets/videos/9878-background-full-screen.mp4'), {}, true);
-  //     setVideo(videoObject);
-  //   }
-  
-  //   loadVideo();
-  // }, []);
 
   function handleScrollToEnd(width, height) {
     if (messagesListRef.current) {
@@ -82,10 +43,10 @@ export default function App() {
     })
     .then(data => {setBotResponse(data.response)
       setMessages([...messages, { message: userInput, sentBy: 'user' },{ message: data.response, sentBy: 'bot' }]);
-      // if(userInput.toLowerCase().includes('mirkwood')){
-      //   // console.log("contains Mirkwood");
-      // }
-      messagesListRef.current.scrollToEnd();  
+      if(userInput.toLowerCase().includes('mirkwood')){
+        console.log("contains Mirkwood");
+      }
+  
       
     })
     
@@ -96,7 +57,6 @@ export default function App() {
   return (
 <View style={styles.container}>
 
-{/* <View style={{position:'absolute',width:'100%', height:'100%',}}> */}
       <Video
         ref={video}
         style={styles.video}
@@ -108,14 +68,13 @@ export default function App() {
         
       />
     
-    {/* </View> */}
   {messages.length > 1 ? (
     <View style={styles.messagesBox}>
       <FlatList
       ref={messagesListRef}
         data={messages}
         renderItem={({ item }) => (
-          console.log(messages),
+          // console.log(messages),
           <View style={item.sentBy === 'bot' ? styles.botMessage : styles.userMessage}>
             <Text style={styles.messageText}>{item.message}</Text>
           </View>
@@ -168,16 +127,10 @@ const styles = StyleSheet.create({
   video: {
     position:'absolute',
     overflow: 'hidden', /* Hide vertical scrollbar */
-    // overflow-x: 'hidden', /* Hide horizontal scrollbar *
     color:'blue',
     width: '100%',
     height: '100%',
-    // transform:[{translateX:'-50%'}]
-    // position: 'absolute',
-    // width: '100%',
-    // height: '100%',
-    // right: 720,
-    // resizeMode:'cover'
+
   },
   input: {
     height: 40,
