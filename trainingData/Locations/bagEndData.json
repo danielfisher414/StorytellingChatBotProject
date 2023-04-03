@@ -18,7 +18,8 @@
           "Where do you live?",
           "Where is your home?",
           "Which location do you live?",
-          "Where is your residence?"
+          "Where is your residence?",
+          "tell me about bag end"
         ],
         "responses": [
           "My home is in Bag End in Hobbiton."
@@ -30,8 +31,6 @@
           "Describe your house",
           "Describe your home",
           "Describe your hobbit house",
-          "Describe your hobbit home",
-          "What does your home look like?",
           "What is inside your house?"
         ],
         "responses": [

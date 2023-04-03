@@ -19,9 +19,9 @@ with open('./trainingData/Locations/bagEndData.json') as file:
 intents = intents1['intents']+ intents2['intents']+ intents3['intents']
 
 
-print(intents1['intents'])
-print()
-print(intents)
+# print(intents1['intents'])
+# print()
+# print(intents)
 
 stemmer = nltk.stem.PorterStemmer()
 

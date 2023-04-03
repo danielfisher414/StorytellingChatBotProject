@@ -17,6 +17,20 @@
         ]
       },
       {
+        "tag": "personal",
+        "patterns": [
+          "Who are you ",
+          "Can you tell me who you are",
+          "What is your name",
+          "tell me about yourself",
+          "what should I call you",
+          "Introduce yourself"
+        ],
+        "responses": [
+            "I'm called Bilbo Baggins I am a Hobbit, and live at Bag End in Hobbiton."
+        ]
+      },
+      {
         "tag": "goodbye",
         "patterns": [
           "Bye",
