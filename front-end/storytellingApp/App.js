@@ -21,6 +21,7 @@ export default function App() {
   const [status, setStatus] = useState([]);
   const [location, setLocation] = useState('');
   const [mirkwoodStory, setMirkwoodStory] = useState(false);
+  const [exitMirkwoodStory, setexitMirkwoodStory] = useState(false);
   // const [video, setVideo] = useState(null);
   const messagesListRef = useRef(null);
   const video = useRef(null);
@@ -75,7 +76,7 @@ export default function App() {
     // VIEW LOCATION PICTURE/VIDEO
     <View style={styles.container}>
 
-      {mirkwoodStory ? (<View><MirkwoodStory /></View>) : location != 'Mirkwood' ? (
+      {mirkwoodStory ? (<View><MirkwoodStory exitMirkwoodStory={()=>setMirkwoodStory(false)}/></View>) : location != 'Mirkwood' ? (
 
         // BAG END LOCATION
         <Video
@@ -154,7 +155,7 @@ export default function App() {
           </View>
           {/* Story Mirkwood */}
           <View style={{ display: 'flex', flexDirection: 'column' }}>
-            {location == 'Mirkwood' ? (<View><Button onPress={activateMirkwoodStory} title='mirkwood submit' /></View>) : (<View></View>)}
+            {location == 'Mirkwood' ? (<View><Button onPress={activateMirkwoodStory} title='mirkwood Story' /></View>) : (<View></View>)}
           </View>
           {/* END OF Story Mirkwood */}
         </View>
