@@ -76,7 +76,7 @@ export default function App() {
     // VIEW LOCATION PICTURE/VIDEO
     <View style={styles.container}>
 
-      {mirkwoodStory ? (<View><MirkwoodStory exitMirkwoodStory={()=>setMirkwoodStory(false)}/></View>) : location != 'Mirkwood' ? (
+      {mirkwoodStory ? (<MirkwoodStory exitMirkwoodStory={()=>setMirkwoodStory(false)}/>) : location != 'Mirkwood' ? (
 
         // BAG END LOCATION
         <Video
