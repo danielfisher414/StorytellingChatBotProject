@@ -7,27 +7,27 @@ const images = [{
 
 },
 {
-    photo: 'test2',
+    image: require('../assets/pictures/Thranduils+Halls+Mirkwood+Lord+of+the+Rings.jpg'),
     text: 'Texttest2'
 
 },
 {
-    photo: 'test3',
+    image: require('../assets/pictures/d2c08vv-1c6666c7-0014-4250-8fc3-23de605870d8.jpg'),
     text: 'Texttest3'
 
 },
 {
-    photo: 'test4',
+    image: require('../assets/pictures/wvxaukoh5ka41.jpg'),
     text: 'Texttest4'
 
 },
 {
-    photo: 'test5',
+    image: require('../assets/pictures/22SPIDERS1_SPAN-superJumbo.jpg'),
     text: 'Texttest5'
 
 },
 {
-    photo: 'test6',
+    image: require('../assets/pictures/2cbe2c04df1414d71ef89f4826124caf.jpg'),
     text: 'Texttest6'
 
 },
@@ -42,12 +42,21 @@ export default class MirkwoodStory extends Component {
     }
 
     nextPictureImage = (direction) => {
-        if (direction == "Continue") {
+        console.log(this.state.currentImageIndex);
+        if (this.state.currentImageIndex === 1) {
+            this.setState({ currentImageIndex: 3}, () => {
+                console.log("hello");
+                console.log(this.state.currentImageIndex);
+            });
+        }
+        if (direction == "Continue" && this.state.currentImageIndex !== 1) {
             this.setState({ currentImageIndex: this.state.currentImageIndex += 1 })
             console.log(this.state.currentImageIndex)
         } else if (direction == "Left") {
             this.setState({ currentImageIndex: 1 });
-            console.log("Left");
+
+            console.log(this.state.currentImageIndex);
+
         } else if (direction == "Right") {
             this.setState({ currentImageIndex: 2 });
             console.log("Right");
@@ -79,15 +88,25 @@ export default class MirkwoodStory extends Component {
                     onError={(e) => console.log(e)}
                 /> */}
                 <Image style={styles.backgroundImage} resizeMode="cover" source={images[this.state.currentImageIndex].image} />
-                <View>
-                    <Button onPress={this.props.exitMirkwoodStory} title="Exit Mirkwood Story" />
+                <View style={{
+                    alignContent: 'center',
+                    alignItems: 'center',
+                    justifyContent: 'end',
+                    flex: 1,
+                    margin: 100
+                }}>
+                    <View style={{ color: 'white', marginBottom: 80, borderWidth: 2, borderStyle: 'solid', borderColor: 'white', padding: 50 }}>
+                        <Text style={{ color: 'white' }}>{images[this.state.currentImageIndex].text}</Text>
+                    </View>
                     {this.state.currentImageIndex == 0 ? (
-                        <div style={{ display: 'flex', flexDirection: 'row' }}>
+                        <div style={{ display: 'flex', flexDirection: 'row', margin: 10, }}>
                             <Button onPress={() => this.nextPictureImage("Left")} title="Left" />
                             <Button onPress={() => this.nextPictureImage("Right")} title="Right" />
                         </div>
-                    ) : this.state.currentImageIndex < 5 ? (<Button onPress={() => this.nextPictureImage("Continue")} title="Continue" />) :
+                    ) : this.state.currentImageIndex < 5 ? (
+                        <View style={{ margin: 10 }}><Button onPress={() => this.nextPictureImage("Continue")} title="Continue" /></View>) :
                         (<View></View>)}
+                    <Button onPress={this.props.exitMirkwoodStory} title="Exit Mirkwood Story" />
                 </View>
             </View>
         );
@@ -97,20 +116,20 @@ export default class MirkwoodStory extends Component {
 
 const styles = StyleSheet.create({
     container: {
-      display:'flex',
-      width: '100%',
-      height: '100%',
-    //   backgroundColor: 'red',
+        display: 'flex',
+        width: '100%',
+        height: '100%',
+        //   backgroundColor: 'red',
     },
     backgroundImage: {
-      position: 'absolute',
-      top: 0,
-      left: 0,
-      right: 0,
-      bottom: 0,
-      zIndex: -1,
-      width:'100%',
-      height:'100%',
+        position: 'absolute',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: -1,
+        width: '100%',
+        height: '100%',
 
     },
-  });
+});

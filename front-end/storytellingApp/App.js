@@ -20,7 +20,7 @@ export default function App() {
   const [messages, setMessages] = useState([]);
   const [status, setStatus] = useState([]);
   const [location, setLocation] = useState('');
-  const [mirkwoodStory, setMirkwoodStory] = useState(false);
+  const [mirkwoodStory, setMirkwoodStory] = useState(true);
   const [exitMirkwoodStory, setexitMirkwoodStory] = useState(false);
   // const [video, setVideo] = useState(null);
   const messagesListRef = useRef(null);
