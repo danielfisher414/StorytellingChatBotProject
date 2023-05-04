@@ -15,6 +15,7 @@
     {
       "tag": "Mirkwood location",
       "patterns": [
+        "Where is Mirkwood",
         "Where is Mirkwood located?",
         "What is the location of Mirkwood?",
         "What parts is Mirkwood in?"
@@ -27,7 +28,10 @@
       "tag": "Mirkwood Dangerous",
       "patterns": [
         "Why is Mirkwood dangerous?",
-        "Is Mirkwood dangerous?"
+        "Is Mirkwood dangerous?",
+        "What dangers are in Mirkwood?",
+        "Tell me about the dangers in Mirkwood?",
+        "Is it dangerous in Mirkwood?"
       ],
       "responses": [
         "The forest is dangerous as it is cursed, and many travelers have lost their way and never returned.",
@@ -37,8 +41,8 @@
     {
       "tag": "Mirkwood Preparation",
       "patterns": [
-        "What should I bring if I want to explore Mirkwood?",
-        "Is Mirkwood dangerous?"
+        "What should I bring if I want to explore Mirkwood?"
+        
       ],
       "responses": [
         "You should bring a good map, weapons, and supplies for at least a week."
@@ -48,11 +52,14 @@
       "tag": "Mirkwood Adventurers",
       "patterns": [
         "Have any famous adventurers explored Mirkwood?",
-        "Has anyone explored Mirkwood?"
+        "Has anyone explored Mirkwood?",
+        "Has anyone else explored Mirkwood?",
+        "Has anyone else travelled through Mirkwood?",
+        "Who has explored through Mirkwood?"
       ],
-      "responses": [
+      "responses": [                                                                                                    
         "Yes, Bilbo Baggins and the Dwarf king Thranduil and his companions passed through Mirkwood on their way to the Lonely Mountain.",
-        "The dwarf king Thranduil also rules over a part of Mirkwood, and Legolas Greenleaf, his son, is known to have traveled through the forest."
+        "The Dwarf king Thranduil also rules over a part of Mirkwood, and Legolas Greenleaf, is known to have traveled through the forest."
       ]
     }
   ]

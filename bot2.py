@@ -4,7 +4,8 @@ import random
 from flask import Flask, render_template, request,jsonify
 from flask_cors import CORS,cross_origin
 import os
-
+nltk.download('punkt')
+print("test")
 # Load the intents file
 with open('intents.json') as file:
     intents1 = json.load(file)
