@@ -113,7 +113,7 @@ export default function App() {
             let punctuation = '';
 
             // Remove any punctuation from the word and save it in a separate variable
-            const wordWithoutPunctuation = word.replace(/[^a-zA-Z0-9'"]/g, '');
+            const wordWithoutPunctuation = word.replace(/[^a-zA-Z0-9'"-]/g, '');
             punctuation = word.slice(wordWithoutPunctuation.length);
             word = wordWithoutPunctuation;
 
@@ -131,7 +131,7 @@ export default function App() {
           
 
             return (
-              <Text key={index} style={shouldColor ? { color: 'gold' } : shouldColor2 ? {color: 'red'}: shouldColor3 ? {color: 'blue'}: {}}>
+              <Text key={index} style={shouldColor ? { color: 'gold' } : shouldColor2 ? {color: '#FF2626'}: shouldColor3 ? {color: '#26FFEB'}: {}}>
                 {word}{punctuation}{' '}
               </Text>
             );
