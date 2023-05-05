@@ -12,22 +12,7 @@
         "responses": [
           "Hello! How can I help you today?",
           "Hi there! What can I do for you?",
-          "Hey! How can I assist you?",
-          "What's up! How may I assist you?"
-        ]
-      },
-      {
-        "tag": "personal",
-        "patterns": [
-          "Who are you ",
-          "Can you tell me who you are",
-          "What is your name",
-          "tell me about yourself",
-          "what should I call you",
-          "Introduce yourself"
-        ],
-        "responses": [
-            "I'm called Bilbo Baggins I am a Hobbit, and live at Bag End in Hobbiton."
+          "Hey! How can I assist you?"
         ]
       },
       {

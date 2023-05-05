@@ -26,7 +26,7 @@ for filename in os.listdir('./trainingData/Locations'):
 
 # print(intents1['intents'])
 # print()
-# print(intents)
+print(intents)
 
 stemmer = nltk.stem.PorterStemmer()
 

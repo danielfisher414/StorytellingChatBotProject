@@ -105,7 +105,7 @@ export default function App() {
       .then(data => {
         if (data.response) {
           console.log(data.response)
-          const wordsToColor = ['Bag', 'End', 'Hobbiton', 'Mirkwood', 'Lonely', 'Mountain', 'Mountains','Elvenking','Halls','Misty','Enchanted','River','Erebor','Middle-earth','Woodland','Realm',];
+          const wordsToColor = ['Bag', 'End', 'Hobbiton', 'Mirkwood', 'Lonely', 'Mountain', 'Mountains','Elvenking','Halls','Misty','Enchanted','River','Erebor','Middle-earth','Woodland','Realm','Dale',];
           const enemyCharToColor = ['Smaug'];
           const characterWordsToColor = ['Thorin','Gandalf','Thorin','Wood-elves','Thranduil','Oakenshield','Bilbo','Baggins','Legolas','Bard',];
           
