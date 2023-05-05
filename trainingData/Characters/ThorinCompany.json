@@ -1,0 +1,29 @@
+{
+    "intents": [
+        {
+            "tag": "Thorin and Company About",
+            "patterns": [
+                "tell me about Thorin and Company",
+                "tell me about Thorin and Company",
+                "Who is in the Thorin and Company",
+                "What is in Thorin and Company"
+            ],
+            "responses": [
+                "Thorin and Company were a group of thirteen dwarves led by Thorin Oakenshield, who embarked on a quest to reclaim their ancestral home of Erebor from the dragon Smaug. Along with the wizard Gandalf, they faced many challenges and obstacles on their journey, including treacherous mountains, dangerous forests, and fierce battles. Despite the odds against them, they remained determined to succeed in their mission",
+                "Thorin and Company were a group of skilled and battle-hardened dwarves, each with their own unique personalities and strengths. Led by Thorin Oakenshield, they embarked on a quest to reclaim the Lonely Mountain and defeat the dragon Smaug. Despite their many challenges and setbacks, they remained steadfast in their determination to succeed and reclaim their lost homeland"
+            ]
+        },
+        {
+            "tag": "Group About",
+            "patterns": [
+                "tell me about your group",
+                "tell me about your group",
+                "Who is in your group"
+            ],
+            "responses": [
+                "My group consisted of a wise wizard named Gandalf, and thirteen dwarves led by Thorin Oakenshield. Each member of our group had unique skills and strengths that were crucial to our success on the journey. What else would you like to know?",
+                "My group was made up of thirteen dwarves, each with their own unique personalities and skills. Led by the noble Thorin Oakenshield, we set out to reclaim the Lonely Mountain from the dragon Smaug"
+            ]
+        }
+    ]
+}

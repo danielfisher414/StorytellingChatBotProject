@@ -1,0 +1,17 @@
+{
+    "intents": [
+        {
+            "tag": "Elvenking's Halls About",
+            "patterns": [
+                "What is the Elvenking Halls",
+                "Tell me about the Elvenking Halls",
+                "Tell me more about the Elvenking Halls"
+            ],
+            "responses": [
+                "The Elvenking Halls, also known as the Halls of Thranduil, are located in Mirkwood forest. They are the home of the Wood-elves, and the Elvenking Thranduil rules from there. The halls are said to be very beautiful and filled with treasures",
+                "The Elvenking Halls are an ancient and magical place, nestled deep in the heart of Mirkwood forest. They are the home of the Wood-elves, and are ruled over by the Elvenking Thranduil. The halls are said to be filled with wonder and enchantment, and few have ever been fortunate enough to see them",
+                "The Elvenking Halls are the home of the Wood-elves, who are known for their skill and grace. Located deep in the heart of Mirkwood forest, the halls are a place of great beauty and mystery. They are ruled by the Elvenking Thranduil, who is a wise and powerful leader"
+            ]
+        }
+    ]
+}

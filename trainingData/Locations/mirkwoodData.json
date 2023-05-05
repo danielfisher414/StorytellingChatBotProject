@@ -61,6 +61,19 @@
         "Yes, Bilbo Baggins and the Dwarf king Thranduil and his companions passed through Mirkwood on their way to the Lonely Mountain.",
         "The Dwarf king Thranduil also rules over a part of Mirkwood, and Legolas Greenleaf, is known to have traveled through the forest."
       ]
+    },
+    {
+      "tag": "Mirkwood History",
+      "patterns": [
+        "tell me the history of mirkwood",
+        "can you tell me the history of mirkwood",
+        "what is the history of mirkwood"
+        
+      ],
+      "responses": [
+        "Mirkwood is a dark and mysterious forest located in the heart of Middle-earth. It was once known as Greenwood the Great, but after the Necromancer's influence took hold, it became a place of darkness and danger. The Wood-elves who live there are skilled archers and fierce defenders of their homeland",
+        "The history of Mirkwood is a long and storied one. Once a vibrant and prosperous forest, it was corrupted by the influence of the Necromancer and became a place of darkness and danger. The Wood-elves who lived there were forced to become reclusive and wary of outsiders"
+      ]
     }
   ]
 }

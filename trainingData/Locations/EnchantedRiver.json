@@ -1,0 +1,17 @@
+{
+    "intents": [
+        {
+            "tag": "Enchanted River About",
+            "patterns": [
+                "What is the Enchanted River",
+                "Tell me about the Enchanted River",
+                "Tell me more about the Enchanted River"
+            ],
+            "responses": [
+                "The Enchanted River is a magical river that flows through the heart of Mirkwood forest. It is said that the waters of the river have special powers and can heal those who drink from it. However, the river can also be dangerous, as those who gaze too long into its waters can become enchanted and lose their sense of time and direction",
+                "The Enchanted River is a place of great mystery and magic. Its waters are said to have healing powers, and many travelers have sought out the river in search of a cure for their ailments. However, the river can also be treacherous, as its powers can be unpredictable and even dangerous at times",
+                "The Enchanted River is a place of legend and wonder. It flows through the dark and foreboding Mirkwood forest, and its waters are said to hold great powers. Some claim that the river can grant wishes, while others believe that it is cursed and should be avoided at all costs"
+            ]
+        }
+    ]
+}

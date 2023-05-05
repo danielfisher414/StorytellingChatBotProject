@@ -8,12 +8,12 @@ const images = [{
 },
 {
   image: require('../assets/pictures/Thranduils+Halls+Mirkwood+Lord+of+the+Rings.jpg'),
-  text: 'As Bilbo and the group took the left path, they notice through the bushes, the Thranduil’s Halls bridge that leads into the mountain. Some elves could be seen walking on the bridge.\n\nThe group curious about what lay inside across the bridge they continue through the forest.'
+  text: 'As Bilbo and the group took the left path, they notice through the bushes, the ElvenKing\'s Halls bridge that leads into a cave. Some Wood Elves could be seen walking on the bridge.\n\nThe group curious about what lay inside across the bridge they continue through the forest.'
 
 },
 {
   image: require('../assets/pictures/mirkwoodBridge.jpg'),
-  text: 'Bilbo and the group taking the right path they walk further along the dirt path, they come across a broken bridge over the Enchanted River. The river was black and rumoured to be cursed.\n\n But finding a boat they cross it. Unfortunately Bombur fell in the river and was knocked unconscious, causing the group to carry Bombur through the forest'
+  text: 'Bilbo and the group taking the right path they walk further along the dirt path, they come across a broken bridge over the Enchanted River. The river was black and rumoured to be cursed.\n\n But finding a boat they cross it. Unfortunately Bombur fell in the river and was knocked unconscious, causing the group to carry Bombur through the forest.'
 
 },
 {
@@ -33,6 +33,8 @@ const images = [{
 },
 
 ];
+
+const wordsToColor = ['ElvenKing\'s','Halls', 'wood','elves'];
 
 export default class MirkwoodStory extends Component {
   constructor(props) {
@@ -109,7 +111,11 @@ export default class MirkwoodStory extends Component {
               padding: 20,
             }}
           >
+            
+            
             <Text style={styles.storyText}>{currentImage.text}</Text>
+
+
           </View>
           {currentImageIndex === 0 ? (
             <View style={{

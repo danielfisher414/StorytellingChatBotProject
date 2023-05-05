@@ -1,0 +1,17 @@
+{
+    "intents": [
+        {
+            "tag": "Lonely Mountain About",
+            "patterns": [
+                "What is the Lonely Mountain",
+                "Tell me about the Lonely Mountain",
+                "Tell me more about the Lonely Mountain"
+            ],
+            "responses": [
+                "The Lonely Mountain, also known as Erebor, is a vast mountain located in the north of Middle-earth. It was once the home of the dwarves and contained a vast treasure hoard guarded by the dragon Smaug. I journeyed there with a group of dwarves, a wizard, and a hobbit to reclaim it from Smaug and restore the dwarves to their rightful home",
+                "The Lonely Mountain is a towering peak in the northern part of Middle-earth that was once home to the dwarves. It was the site of a great battle between the dwarves and a horde of orcs, where the dwarves emerged victorious. Later, it was overtaken by the dragon Smaug, who claimed the dwarves' treasure hoard as his own",
+                "The Lonely Mountain is a majestic peak located in the north of Middle-earth. It is the ancestral home of the dwarves and contains a vast treasure hoard that was once guarded by the dragon Smaug. I journeyed there with a group of companions to defeat Smaug and reclaim the treasure hoard for the dwarves"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "intents": [
+        {
+            "tag": "Woodland Realm About",
+            "patterns": [
+                "What is the Woodland Realm",
+                "Tell me about the Woodland Realm",
+                "Tell me more about the Woodland Realm"
+            ],
+            "responses": [
+                "The Woodland Realm, also known as the Elvenking's Halls, is the kingdom of the Wood-elves. It's located in Mirkwood forest, and is ruled by the Elvenking Thranduil. The Woodland Realm is a place of great beauty and magic, but it can also be quite dangerous for those who are unfamiliar with its ways",
+                "The Woodland Realm is the home of the Wood-elves, a noble and ancient race of elves who live deep in the heart of Mirkwood forest. The realm is ruled by the Elvenking Thranduil, who is known for his wisdom and his love of beauty. The Woodland Realm is a place of great mystery and wonder, but it can also be a place of great peril",
+                "The Woodland Realm is a majestic kingdom located in the heart of Mirkwood forest. It is home to the Wood-elves, a wise and ancient people who are known for their skill with a bow and their deep connection to nature. The Elvenking Thranduil rules over the Woodland Realm with a fair and just hand, and his people are fiercely loyal to him"
+            ]
+        }
+    ]
+}
+

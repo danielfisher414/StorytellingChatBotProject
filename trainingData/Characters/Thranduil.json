@@ -1,0 +1,18 @@
+{
+    "intents": [
+        {
+            "tag": "Thranduil About",
+            "patterns": [
+                "Who is Thranduil",
+                "can you tell me Who is Thranduil",
+                "tell me about Thranduil",
+                "tell me more about Thranduil"
+            ],
+            "responses": [
+                "Thranduil is the Elvenking of the Woodland Realm, and his halls are a sight to behold. The Elvenking's Halls are located deep within Mirkwood forest and are a testament to the beauty and power of elven craftsmanship. Thranduil is a wise and powerful leader, but he can be a bit aloof at times",
+                "Thranduil is the Elvenking of Mirkwood and the father of Legolas. He rules from the Elvenking's Halls, a grand palace located deep within the forest. The halls are a marvel of elven architecture",
+                "Thranduil is a powerful elven lord who rules over the Woodland Realm from his seat in the Elvenking's Halls. The halls are located deep within Mirkwood forest and are a marvel of elven craftsmanship"
+            ]
+        }
+    ]
+}
