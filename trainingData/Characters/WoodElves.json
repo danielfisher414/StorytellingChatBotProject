@@ -5,11 +5,8 @@
             "patterns": [
                 "Who is the wood elves",
                 "Who are the wood elves",
-                "Who are the Wood-elves",
-                "tell me about the wood elves",
-                "tell me about the Wood-elves",
-                "tell me about wood elves",
-                "tell me about Wood-elves"
+                "tell me about the wood elves"
+                
             ],
             "responses": [
                 "The Wood-elves are a proud and noble people who value their isolation from the rest of Middle-earth. They are excellent archers and hunters, and are known for their ability to move through the forest without leaving a trace. They are led by Thranduil"

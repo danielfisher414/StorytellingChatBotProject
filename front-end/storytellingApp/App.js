@@ -105,7 +105,10 @@ export default function App() {
       .then(data => {
         if (data.response) {
           console.log(data.response)
-          const wordsToColor = ['Bag', 'End', 'Hobbiton', 'Mirkwood', 'Lonely', 'Mountain', 'Mountains'];
+          const wordsToColor = ['Bag', 'End', 'Hobbiton', 'Mirkwood', 'Lonely', 'Mountain', 'Mountains','Elvenking','Halls','Misty','Enchanted','River','Erebor','Middle-earth','Woodland','Realm',];
+          const enemyCharToColor = ['Smaug'];
+          const characterWordsToColor = ['Thorin','Gandalf','Thorin','Wood-elves','Thranduil','Oakenshield','Bilbo','Baggins','Legolas','Bard',];
+          
           const formattedResponse = data.response.split(' ').map((word, index, words) => {
             let punctuation = '';
 
@@ -116,14 +119,19 @@ export default function App() {
 
             // Check if the current word should be colored gold
             const shouldColor = wordsToColor.includes(word)
+            const shouldColor2 = enemyCharToColor.includes(word)
+            const shouldColor3 = characterWordsToColor.includes(word)
 
 
             console.log(wordsToColor);
 
 
             // Return the word with or without gold color, as appropriate
+
+          
+
             return (
-              <Text key={index} style={shouldColor ? { color: 'gold' } : {}}>
+              <Text key={index} style={shouldColor ? { color: 'gold' } : shouldColor2 ? {color: 'red'}: shouldColor3 ? {color: 'blue'}: {}}>
                 {word}{punctuation}{' '}
               </Text>
             );

@@ -1,32 +1,21 @@
 {
   "intents": [
     {
-      "tag": "Smaug About",
-      "patterns": [
-        "Who is the dragon",
-        "tell me about the dragon",
-        "tell me about Smaug",
-        "Who is Smaug"
-      ],
-      "responses": [
-        "Gandalf is a wizard from Middle-earth. He is known for his wise counsel and his magical powers, which he uses to help guide those around him. He played a key role in my own adventure, setting me on the path that would lead me to the Lonely Mountain"
-      ]
-    },
-    {
       "tag": "Smaug Description",
       "patterns": [
-        "What does Smaug do",
+        "Who is Smaug",
         "Tell me about Smaug",
-        "Who is Smaug"
+        "Who is the dragon",
+        "tell me about the dragon"
       ],
       "responses": [
-        "Smaug is a dragon who lived in the Lonely Mountain and hoarded a vast treasure of gold and jewels. He was feared by many, and his presence threatened the nearby town of Dale. He was eventually defeated by a group of adventurers, led by Thorin Oakenshield, who sought to reclaim the treasure",
-        "Smaug is a mighty dragon of the north who was known for his fierce temper and insatiable greed. He claimed the Lonely Mountain as his own, and his presence there was a constant threat to the nearby town of Dale. He was eventually defeated by a group of adventurers who sought to reclaim the treasure that he had hoarded for many years",
-        "Smaug was a dragon of incredible size and power who was feared by many in Middle-earth. He made his lair in the Lonely Mountain and hoarded a vast treasure of gold and jewels. His presence there threatened the nearby town of Dale, and he was eventually defeated by a group of brave adventurers led by Thorin Oakenshield. Is there anything else you would like to know about Smaug"
+        "Smaug is a dragon who lived in the Lonely Mountain and hoarded a vast treasure of gold and jewels. He was feared by many, and his presence threatened the nearby town of Dale. He was eventually defeated by a man called Bard",
+        "Smaug is a mighty dragon of the north who was known for his fierce temper and insatiable greed. He claimed the Lonely Mountain as his own, and his presence there was a constant threat to the nearby town of Dale. He was eventually defeated by Bard",
+        "Smaug was a dragon of incredible size and power who was feared by many in Middle-earth. He made his lair in the Lonely Mountain and hoarded a vast treasure of gold and jewels. His presence there threatened the nearby town of Dale, and he was eventually defeated by a group of brave man called Bard. Is there anything else you would like to know about Smaug"
       ]
     },
     {
-      "tag": "Smaug Beginning",
+      "tag": "Smaug Death",
       "patterns": [
         "Who deafeated Smaug",
         "Who killed Smaug",

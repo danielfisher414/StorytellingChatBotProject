@@ -5,20 +5,24 @@ from flask import Flask, render_template, request,jsonify
 from flask_cors import CORS,cross_origin
 import os
 nltk.download('punkt')
-print("test")
+
+
+
 # Load the intents file
 with open('intents.json') as file:
-    intents1 = json.load(file)
-# trainingData\Locations\mirkwoodData.json
-with open('./trainingData/Locations/mirkwoodData.json') as file:
-    intents2 = json.load(file)
-    
-with open('./trainingData/Locations/bagEndData.json') as file:
-    intents3 = json.load(file)
-# Tokenize and stem the words in the patterns
-# used to reduce words to their base form
-intents = intents1['intents']+ intents2['intents']+ intents3['intents']
+    intents = json.load(file)['intents']
 
+# Load the JSON files from the Characters folder
+for filename in os.listdir('./trainingData/Characters'):
+    if filename.endswith('.json'):
+        with open(os.path.join('./trainingData/Characters', filename)) as file:
+            intents += json.load(file)['intents']
+
+# Load the JSON files from the Locations folder
+for filename in os.listdir('./trainingData/Locations'):
+    if filename.endswith('.json'):
+        with open(os.path.join('./trainingData/Locations', filename)) as file:
+            intents += json.load(file)['intents']
 
 # print(intents1['intents'])
 # print()
