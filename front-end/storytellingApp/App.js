@@ -275,8 +275,8 @@ export default function App() {
   onSubmitEditing={handlePress}
 />
 {userInput ? (
-  <TouchableOpacity style={{ position: 'absolute', right: 4, top: 7 }} onPress={handleClearInput}>
-    <CloseCircleFilled style={{ color: '#d7d7d7', fontSize: 24, borderRadius:20 }} />
+  <TouchableOpacity style={{ position: 'absolute', right: 5, top: 8 }} onPress={handleClearInput}>
+    <CloseCircleFilled style={{ color: '#d7d7d7', fontSize: 22, borderRadius:20 }} />
   </TouchableOpacity>
 ) : null}
 
@@ -513,13 +513,15 @@ const styles = StyleSheet.create({
   locationTitle: {
     color: 'gold',
     textAlign: 'center',
-    margin: 30,
-    fontSize: 30,
+    margin: 20,
+    fontSize: 32,
     fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.5)',
     textShadowOffset: { width: 1, height: 1 },
     textShadowRadius: 1,
-    textShadow: '3px 3px 3px rgba(0, 0, 0, 1)'
+    textShadow: '4px 3px 6px rgba(0, 0, 0)',
+    fontFamily:'Sans-serif'
+
   },
   suggestionButton: {
     backgroundColor: 'blue',

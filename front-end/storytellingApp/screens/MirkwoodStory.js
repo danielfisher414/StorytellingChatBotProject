@@ -3,7 +3,7 @@ import { View, Text, Button, Image, TouchableOpacity, StyleSheet, ActivityIndica
 // lord+of+the+rings+places+mirkwood.png
 const images = [{
   image: require('../assets/pictures/lord+of+the+rings+places+mirkwood.jpg'),
-  text: 'As Bilbo Baggins and his group venture into the Mirkwood forest with the goal of reaching the other side.\n\n The group comes across a fork in the path with two paths leading in different directions.\n\nOne path veers to the left, while the other leads off to the right.\n\nBilbo must now decide which of these paths to follow on to his journey.'
+  text: 'As Bilbo Baggins and his group venture into the Mirkwood forest with the goal of reaching the other side.\n\n The group comes across a fork in the path with two paths leading in different directions.\n\nOne path veers to the left, while the other leads off to the right. \n\nThe group must now decide which of these paths to follow on to his journey.'
 
 },
 {
@@ -13,12 +13,12 @@ const images = [{
 },
 {
   image: require('../assets/pictures/mirkwoodBridge.jpg'),
-  text: 'Bilbo and the group taking the right path they walk further along the dirt path, they come across a broken bridge over the Enchanted River. The river was black and rumoured to be cursed.\n\n But finding a boat they cross it. Unfortunately Bombur fell in the river and was knocked unconscious, causing the group to carry Bombur through the forest.'
+  text: 'Bilbo and the group taking the right path they walk further along the dirt path, they come across a broken bridge over the Enchanted River. The river was black and rumoured to be cursed.\n\nBut finding a boat they cross it. Unfortunately Bombur fell in the river and was knocked unconscious, causing the group to carry Bombur through the forest.'
 
 },
 {
   image: require('../assets/pictures/wvxaukoh5ka41.jpg'),
-  text: 'As Bilbo continues in front of the group, he suddenly notices his dwarf companions have vanished.\n\n Following a footpath Bilbo is led to a shadowy spider\'s nest - and there, he sees his friends, ensnared and helpless, surrounded by spiders.'
+  text: 'As Bilbo continues in front of the group, he suddenly notices his Dwarf companions have vanished.\n\nFollowing a footpath Bilbo is led to a shadowy spider\'s nest - and there, he sees his friends, ensnared and helpless, surrounded by spiders.'
 
 },
 {
@@ -28,7 +28,7 @@ const images = [{
 },
 {
   image: require('../assets/pictures/2cbe2c04df1414d71ef89f4826124caf.jpg'),
-  text: 'After Bilbo\'s triumphant escape from the clutches of the spiders, all of the group settle down around a crackling campfire, basking in the warmth of the group hard-earned victory.\n\n As Bilbo anticipates another long journey, a mysterious feeling creeps over him, as if some unknown presence is silently observing Bilbo\'s every move...'
+  text: 'After Bilbo\'s triumphant escape from the clutches of the spiders, all of the group settle down around a crackling campfire, basking in the warmth of the group hard-earned victory.\n\nAs Bilbo anticipates another long journey, a mysterious feeling creeps over him, as if some unknown presence is silently observing Bilbo\'s every move...'
 
 },
 
@@ -85,8 +85,8 @@ export default class MirkwoodStory extends Component {
           // resizeMode="cover"
           resizeMode="fast"
           source={currentImage.image}
-          onLoadStart={this.handleImageLoadStart}
-          onLoadEnd={this.handleImageLoadEnd}
+          // onLoadStart={this.handleImageLoadStart}
+          // onLoadEnd={this.handleImageLoadEnd}
           onError={(e) => console.log(e)}
         />
 
@@ -102,6 +102,7 @@ export default class MirkwoodStory extends Component {
         >
           <View
             style={{
+              display: 'initial',
               marginTop: 60,
               color: "white",
               marginBottom: 40,
@@ -109,11 +110,27 @@ export default class MirkwoodStory extends Component {
               borderStyle: "solid",
               borderColor: "white",
               padding: 20,
+              borderRadius:10,
+              margin:10,
+              backgroundColor: 'rgba(0,0,0, 0.45)',
             }}
           >
             
             
-            <Text style={styles.storyText}>{currentImage.text}</Text>
+            {currentImage.text.split(" ").map((word, index) => {
+    let style = styles.storyText;
+    if (word === "ElvenKing's"|| word === "Halls" || word === "Enchanted" || word === "River." || word === "Mirkwood") {
+      style = [styles.storyText, { color: "gold" }];
+    } else if (word === "Wood" || word === "Elves" || word === "Bombur" || word === "Bilbo" || word === "Bilbo's" ||word === "Dwarf") {
+      style = [styles.storyText, { color: "#26FFEB" }];
+    }else if (word === "left," ||  word === "right.") {
+      style = [styles.storyText, { color: "#00FB4D" }];
+    }else if (word === "spider's" ||  word === "spiders."||  word === "spiders"||word === "spiders,") {
+      style = [styles.storyText, { color: "#FF2626" }];
+    }
+
+    return <Text key={index} style={style}>{word} </Text>;
+  })}
 
 
           </View>
@@ -211,8 +228,8 @@ const styles = StyleSheet.create({
     // lineHeight: 30,
     fontWeight: 'bold',
     textShadowColor: 'rgba(0, 0, 0, 0.75)',
-    textShadowOffset: { width: 2, height: 2 },
-    textShadowRadius: 5,
+    textShadowOffset: { width: 2, height: -1 },
+    textShadowRadius: 1,
   },
   mkButton: {
     backgroundColor: '#007AFF',
